@@ -43,6 +43,10 @@
     padding-left: 0px;
     padding-right: 0px;
 }
+.main-container1{
+    padding-left: 0px;
+    padding-right: 0px;
+}
 
 .views{
     background-color: rgb(255, 0, 102);
@@ -89,6 +93,7 @@ color:rgb(255, 0, 102);
 font-weight: 700;
 margin-bottom: 20px;
 font-size: 50px;
+margin-top: 0px;
 }
 .moreDetailcontent{
     padding-left: 150px;
@@ -109,7 +114,14 @@ font-size: 50px;
 .descriptiondetail{
     font-size: 30px;
 }
-
+.desc p{
+    font-size: 25px;
+}
+.desc{
+    margin: auto;
+    max-width: 800;
+    text-align: justify;
+}
 @media only screen and (max-width: 767px) {
     .bannertitle {
         position: absolute;

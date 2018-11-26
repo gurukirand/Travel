@@ -34,21 +34,22 @@ $_SESSION['id']= $_GET['id'];
     </div>
     <img src="slider-1.jpg" class="centerview">
 </div>
-<div>
+
     <?php
     $res=$k->viewdetail($id);
     $result = $res->fetch_assoc();
     $title=$result['title'];
     $description=$result['description'];
     $photo=$result['photo']?>
-    
-    <h2 class="moreDetailtiyle"><?php echo $title;?></h2>
+    <div class="col-md-12">
+    <h2 class="moreDetailtiyle"><?php echo $title;?></h2></div>
     <!-- <img src="<?php echo $photo;?>"  class="centerview"> -->
-    
+  
+<div class="desc">
     <p class="descriptiondetail"><?php echo $description;?></p>
-
-
 </div>
+
+
 <?php  require_once('reaction.php');
 require_once('dbFunc.php');
 if (isset($_SESSION['username'])) {
