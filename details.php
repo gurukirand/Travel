@@ -1,16 +1,22 @@
 <?php
+
 session_start();
+
 echo "<script>
     if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
     }
 </script>";
+
 include("dbFunc.php");
 //$id = null;
+
+// story id is ftched
 if ( !empty($_GET['id'])) {
     $id = $_GET['id'];
 }
 $_SESSION['id']= $_GET['id'];
+
 ?>
 
 <html>
@@ -25,30 +31,47 @@ $_SESSION['id']= $_GET['id'];
 
 <div class="col-md-12 main-container">
     <div class="col-md-6 headerstyle">
-        <a href="index.php" >   <img src="logo.png" class="logo">
+        <a href="index.php"><img src="logo.png" class="logo">
     </div>
     <div class="col-md-6 headerstyle text-right">
         <!--    <button type="submit" name="view" class="btnstyle">-->
         <!--    <a href="edit.php?id=--><?php //echo $id?><!--">Edit</a></button>-->
-        <a href="index.php" >  <button type="submit" name="view" class="btnstyle">Back</button></a>
+        <a href="index.php" > <button type="submit" name="view" class="btnstyle">Back</button></a>
     </div>
     <img src="slider-1.jpg" class="centerview">
 </div>
 
     <?php
+
     $res=$k->viewdetail($id);
     $result = $res->fetch_assoc();
     $title=$result['title'];
     $description=$result['description'];
+    $alt=$result['alt'];
+    $filtered_image=$result['filtered_image'];
+ 
+
     $photo=$result['photo']?>
     <div class="col-md-12">
     <h2 class="moreDetailtiyle"><?php echo $title;?></h2></div>
     <!-- <img src="<?php echo $photo;?>"  class="centerview"> -->
   
-<div class="desc">
+<!-- <div class="desc">
     <p class="descriptiondetail"><?php echo $description;?></p>
-</div>
+</div> -->
 
+
+
+    <!-- megha added for image filtering -->
+    <div class="image_story" style="text-align:center;">
+    <img src=<?php if(!$filtered_image){echo $photo;} else echo $filtered_image;?> alt=<?php echo $alt?> align="middle" /><br/><br/>
+    <button onclick="window.location.href='exp.php'" style="border:none;background-color:#FF005F;color:white;padding:5px 5px;">Add image filters</button>
+    <br/>
+    </div>
+    <!-- image filtering ends -->
+     <div class="desc">
+    <p class="descriptiondetail"><?php echo $description;?></p>
+    </div>
 
 <?php  require_once('reaction.php');
 require_once('dbFunc.php');
