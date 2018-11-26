@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
     $dbhost = 'localhost';
     $dbuser = 'root';
     $dbpass = 'Abcd@123';
-    $dbname = 'Travel';
+    $dbname = 'comments';
     $conn = mysqli_connect($dbhost, $dbuser, $dbpass,$dbname);
             
             $image_filter=$_SESSION['uploaded_image'];
@@ -70,7 +70,7 @@ if(isset($_POST['submit'])){
             },
             function(data, status){
     
-          // alert("Data: " + data + "\nStatus: " + status);
+           //alert("Data: " + data + "\nStatus: " + status);
                      $('#blah').attr('src', data);
                     // document.getElementById("blah").style.display="block";
             });

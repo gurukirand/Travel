@@ -371,6 +371,5 @@ die;
     }
 
 $k = new dbFunc();
-
 ?>  
 

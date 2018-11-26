@@ -84,6 +84,7 @@
       <div class="row">
       <div class="col-md-12 main-container">
       <?php
+            $user_id=$row['id'];
             $banner_image=$row['photo'];
             $banner_path=$banner_image;
             $place=$row['title'];
