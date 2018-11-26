@@ -64,7 +64,7 @@
                 <a class="button" href="admin_dashboard.php">Home</a>
                 <a class="button" href="view_user.php">View users</a>
                 <a class="button" href="view_comments.php">View Comments</a>
-                <a class="button" href="logout.php">Logout</a>
+                <a class="button" href="admin.php">Logout</a>
             </div>
          </div>
       </div>
